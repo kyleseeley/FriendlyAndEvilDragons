@@ -1,1 +1,33 @@
 // Your code here
+const Dragon = require('./dragon')
+
+class FriendlyDragon extends Dragon {
+    constructor(name, color, lifeGoals, friend){
+        super(name, color);
+        this.lifeGoals = lifeGoals;
+        this.friend = friend;
+    }
+    hasLifeGoals(array){
+        array.forEach(lifeGoals => console.log(`${this.name} likes to ${lifeGoals}`))
+    }
+
+    helpsPeople(){
+        return (`${this.name} helps thier friend ${this.friend}`)
+    }
+}
+
+
+const puff = new FriendlyDragon(
+    "Puff",
+    "green",
+    [
+      "live by the sea",
+      "frolick in the autumn mist",
+      "help small children"
+    ],
+    "Jackie Paper"
+  );
+  console.log(puff);
+  console.log(puff.breathesFire()); //Friendly dragons can still breathe fire!
+  puff.hasLifeGoals();
+  console.log(puff.helpsPeople());
